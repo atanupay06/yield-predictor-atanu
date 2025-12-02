@@ -123,18 +123,62 @@ model = load_model()
 # Dropdown Data
 # ----------------------------------------------------------
 STATE_DISTRICTS = {
-    "Andaman and Nicobar Islands": ["NICOBARS","NORTH AND MIDDLE ANDAMAN","SOUTH ANDAMANS"],
-    "Andhra Pradesh": ["ANANTAPUR","CHITTOOR","EAST GODAVARI","GUNTUR","KADAPA","KRISHNA","KURNOOL",
-                       "PRAKASAM","SPSR NELLORE","SRIKAKULAM","VISAKHAPATANAM","VIZIANAGARAM","WEST GODAVARI"],
-    "Assam": ["BAKSA","BARPETA","BONGAIGAON","CACHAR","CHIRANG","DARRANG"],
-    "Bihar": ["ARARIA","ARWAL","AURANGABAD","BANKA","BEGUSARAI"],
+    "Andaman and Nicobar Islands": [
+        "NICOBARS", "NORTH AND MIDDLE ANDAMAN", "SOUTH ANDAMANS"
+    ],
+    "Andhra Pradesh": [
+        "ANANTAPUR","CHITTOOR","EAST GODAVARI","GUNTUR","KADAPA",
+        "KRISHNA","KURNOOL","PRAKASAM","SPSR NELLORE","SRIKAKULAM",
+        "VISAKHAPATANAM","VIZIANAGARAM","WEST GODAVARI"
+    ],
+    "Arunachal Pradesh": [
+        "ANJAW","CHANGLANG","DIBANG VALLEY","EAST KAMENG","EAST SIANG",
+        "KURUNG KUMEY","LOHIT","LONGDING","LOWER DIBANG VALLEY",
+        "LOWER SUBANSIRI","NAMSAI","PAPUM PARE","TAWANG","TIRAP",
+        "UPPER SIANG","UPPER SUBANSIRI","WEST KAMENG","WEST SIANG"
+    ],
+    "Assam": [
+        "BAKSA","BARPETA","BONGAIGAON","CACHAR","CHIRANG","DARRANG",
+        "DHEMAJI","DHUBRI","DIBRUGARH","DIMA HASAO","GOALPARA",
+        "GOLAGHAT","HAILAKANDI","JORHAT","KAMRUP","KAMRUP METRO",
+        "KARBI ANGLONG","KARIMGANJ","KOKRAJHAR","LAKHIMPUR",
+        "MARIGAON","NAGAON","NALBARI","SIVASAGAR","SONITPUR",
+        "TINSUKIA","UDALGURI"
+    ],
+    "Bihar": [
+        "ARARIA","ARWAL","AURANGABAD","BANKA","BEGUSARAI","BHAGALPUR",
+        "BHOJPUR","BUXAR","DARBHANGA","GAYA","GOPALGANJ","JAMUI",
+        "JEHANABAD","KAIMUR (BHABUA)","KATIHAR","KHAGARIA","KISHANGANJ",
+        "LAKHISARAI","MADHEPURA","MADHUBANI","MUNGER","MUZAFFARPUR",
+        "NALANDA","NAWADA","PASHCHIM CHAMPARAN","PATNA","PURBI CHAMPARAN",
+        "PURNIA","ROHTAS","SAHARSA","SAMASTIPUR","SARAN","SHEIKHPURA",
+        "SHEOHAR","SITAMARHI","SIWAN","SUPAUL","VAISHALI"
+    ],
+    "Chandigarh": ["CHANDIGARH"],
+    "Chhattisgarh": [
+        "BALOD","BALODA BAZAR","BALRAMPUR","BASTAR","BEMETARA","BIJAPUR",
+        "BILASPUR","DANTEWADA","DHAMTARI","DURG","GARIYABAND","JANJGIR-CHAMPA"
+    ]
 }
 
 SEASONS = ["Kharif","Rabi","Whole Year","Autumn","Summer","Winter"]
 
 CROPS = [
-    'Rice','Wheat','Banana','Coconut','Maize','Sugarcane','Potato','Turmeric',
-    'Groundnut','Blackgram','Peas','Onion','Tomato','Paddy'
+    'Arecanut','Other Kharif pulses','Rice','Banana','Cashewnut','Coconut',
+    'Dry ginger','Sugarcane','Sweet potato','Tapioca','Black pepper',
+    'Dry chillies','other oilseeds','Turmeric','Maize','Moong(Green Gram)',
+    'Urad','Arhar/Tur','Groundnut','Sunflower','Bajra','Castor seed',
+    'Cotton(lint)','Horse-gram','Jowar','Korra','Ragi','Tobacco','Gram',
+    'Wheat','Masoor','Sesamum','Linseed','Safflower','Onion',
+    'other misc. pulses','Samai','Small millets','Coriander','Potato',
+    'Other  Rabi pulses','Soyabean','Beans & Mutter(Vegetable)','Bhindi',
+    'Brinjal','Citrus Fruit','Cucumber','Grapes','Mango','Orange',
+    'other fibres','Other Fresh Fruits','Other Vegetables','Papaya',
+    'Pome Fruit','Tomato','Rapeseed &Mustard','Mesta','Cowpea(Lobia)',
+    'Lemon','Pome Granet','Sapota','Cabbage','Peas  (vegetable)',
+    'Niger seed','Bottle Gourd','Sannhamp','Varagu','Garlic','Ginger',
+    'Oilseeds total','Pulses total','Jute','Peas & beans (Pulses)',
+    'Blackgram','Paddy','Pineapple','Barley','Khesari','Guar seed'
 ]
 
 # ----------------------------------------------------------
@@ -230,5 +274,6 @@ if predict:
 # ----------------------------------------------------------
 st.markdown("---")
 st.caption("Developed with ❤️ using Streamlit | Atanu Paul")
+
 
 
