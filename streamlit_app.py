@@ -26,6 +26,7 @@ st.markdown("""
     color: white !important;
 }
 
+/* Main heading */
 .big-title {
     font-size: 42px;
     font-weight: 900;
@@ -34,20 +35,30 @@ st.markdown("""
     color: #1abc9c;
 }
 
+/* Section titles */
 .section-title {
     font-size: 26px;
     color: #38b2ac;
     font-weight: 700;
     margin-bottom: 12px;
+    margin-top: 8px;
 }
 
+/* Remove cards (no background boxes) */
 .card {
-    background: #132437;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0px 4px 25px rgba(0,0,0,0.2);
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
+/* Increase font size of form labels */
+label, .stSelectbox label, .stNumberInput label, .stSlider label {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Prediction result card */
 .result-card {
     background: #e6fff7;
     padding: 25px;
@@ -59,6 +70,7 @@ st.markdown("""
     margin-top: 20px;
 }
 
+/* Metric cards */
 .metric-card {
     background: #1a2e47;
     padding: 18px;
@@ -68,6 +80,7 @@ st.markdown("""
     box-shadow: 0 0 15px rgba(0,255,180,0.15);
 }
 
+/* Predict Button */
 .stButton>button {
     background: linear-gradient(90deg, #1abc9c, #149174);
     color: white;
@@ -134,13 +147,12 @@ left, right = st.columns([1,1])
 # ----------------------------------------------------------
 with left:
     st.markdown("<div class='section-title'>📍 Enter Location & Crop Details</div>", unsafe_allow_html=True)
-    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
     state = st.selectbox("State", list(STATE_DISTRICTS.keys()))
     district = st.selectbox("District", STATE_DISTRICTS[state])
     crop = st.selectbox("Crop", CROPS)
     season = st.selectbox("Season", SEASONS)
-    year = st.number_input("Crop Year", 1990, 2050, 2020)
+    year = st.number_input("Crop Year", 1990, 2050, 2025)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -149,7 +161,6 @@ with left:
 # ----------------------------------------------------------
 with right:
     st.markdown("<div class='section-title'>🌡️ Environment Inputs</div>", unsafe_allow_html=True)
-    st.markdown("<div class='card'>", unsafe_allow_html=True)
 
     temp = st.slider("Temperature (°C)", 10, 50, 30)
     hum = st.slider("Humidity (%)", 10, 100, 50)
@@ -219,4 +230,5 @@ if predict:
 # ----------------------------------------------------------
 st.markdown("---")
 st.caption("Developed with ❤️ using Streamlit | Atanu Paul")
+
 
