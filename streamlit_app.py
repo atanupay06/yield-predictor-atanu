@@ -253,27 +253,28 @@ if predict:
         </div>
     """, unsafe_allow_html=True)
 
-    # EXTRA METRICS
-    c1, c2, c3 = st.columns(3)
-    c1.markdown(f"<div class='metric-card'>🌡️ Temp Score:<br><b>{temp*2}%</b></div>", unsafe_allow_html=True)
-    c2.markdown(f"<div class='metric-card'>💧 Moisture Index:<br><b>{soil*1.5}</b></div>", unsafe_allow_html=True)
-    c3.markdown(f"<div class='metric-card'>☁️ Humidity Factor:<br><b>{hum*1.2}</b></div>", unsafe_allow_html=True)
+    # # EXTRA METRICS
+    # c1, c2, c3 = st.columns(3)
+    # c1.markdown(f"<div class='metric-card'>🌡️ Temp Score:<br><b>{temp*2}%</b></div>", unsafe_allow_html=True)
+    # c2.markdown(f"<div class='metric-card'>💧 Moisture Index:<br><b>{soil*1.5}</b></div>", unsafe_allow_html=True)
+    # c3.markdown(f"<div class='metric-card'>☁️ Humidity Factor:<br><b>{hum*1.2}</b></div>", unsafe_allow_html=True)
 
-    # OPTIONAL — YEARWISE CHART (DEMO CHART)
-    chart_df = pd.DataFrame({
-        "Year": [year-2, year-1, year, year+1],
-        "Production": [prod*0.7, prod*0.85, prod, prod*1.1]
-    })
+    # # OPTIONAL — YEARWISE CHART (DEMO CHART)
+    # chart_df = pd.DataFrame({
+    #     "Year": [year-2, year-1, year, year+1],
+    #     "Production": [prod*0.7, prod*0.85, prod, prod*1.1]
+    # })
 
-    line = alt.Chart(chart_df).mark_line(point=True, color="#1abc9c").encode(
-        x="Year:O", y="Production:Q"
-    ).properties(title="📈 Estimated Production Trend", height=350)
+    # line = alt.Chart(chart_df).mark_line(point=True, color="#1abc9c").encode(
+    #     x="Year:O", y="Production:Q"
+    # ).properties(title="📈 Estimated Production Trend", height=350)
 
-    st.altair_chart(line, use_container_width=True)
+    # st.altair_chart(line, use_container_width=True)
 
 # ----------------------------------------------------------
 st.markdown("---")
 st.caption("Developed with ❤️ using Streamlit | Atanu Paul")
+
 
 
 
